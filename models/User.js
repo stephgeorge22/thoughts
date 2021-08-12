@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const matchEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+const matchEmail = `/.+\@.+\..+/`;
 
 const UserSchema = new Schema({
     username: {
@@ -12,12 +12,12 @@ const UserSchema = new Schema({
         type: String, 
         required: true, 
         unique: true, 
-        match: [matchEmail, 'Please enter a valid email.']
+        // match: [matchEmail, 'Please enter a valid email.']
     }
 })
 
 // create the User model using the UserSchema
 const User = model('User', UserSchema);
 
-// export the Pizza model
+// export the User model
 module.exports = User;
