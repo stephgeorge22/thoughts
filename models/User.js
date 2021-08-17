@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         type: String, 
         required: true, 
         unique: true, 
-        // match: [matchEmail, 'Please enter a valid email.']
+        match: [matchEmail, 'Please enter a valid email.']
     }
 })
 
