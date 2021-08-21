@@ -29,6 +29,6 @@ router
 
 router
     .route('/:userId/friends/:friendsId')
-    .delete(removeReaction)
+    .delete(removeFriend)
 
 module.exports = router;

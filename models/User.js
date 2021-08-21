@@ -6,7 +6,7 @@ const FriendSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
         },
-        friend: {
+        friendName: {
             type: String,
             required: true
         },
@@ -48,7 +48,7 @@ const UserSchema = new Schema(
 )
 
 // virtual for total number of friends
-TUserSchema.virtual('friendCount').get(function () {
+UserSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
