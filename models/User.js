@@ -34,17 +34,23 @@ const UserSchema = new Schema(
             required: true,
             unique: true,
             match: [/.+@.+\..+/]
-        }, 
-        friends: [FriendSchema]
-    }, 
+        },
+        friends: [FriendSchema],
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            }
+        ]
+    },
     {
         toJSON: {
             vituals: true,
             getters: true
-        }, 
+        },
         id: false
     }
-    
+
 )
 
 // virtual for total number of friends
